@@ -11,8 +11,8 @@ public class ErroDeBuscaDeProdutoObject {
 		element = driver.findElement(By.id("speakersImg"));
 		return element;
 }
-	public static WebElement SOUNDLINKWIRELESSSPEAKER(WebDriver driver) {
-		element = driver.findElement(By.id("25"));
+	public static WebElement HPS9500BLUETOOTHWIRELESSSPEAKER(WebDriver driver) {
+		element = driver.findElement(By.id("19"));
 		return element;
 }
 	public static WebElement Quantidade(WebDriver driver) {

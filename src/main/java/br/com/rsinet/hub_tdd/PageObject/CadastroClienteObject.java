@@ -3,9 +3,12 @@ package br.com.rsinet.hub_tdd.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class CadastroClienteObject {
 	public static WebElement element = null;
+	
+	private static Select select = null;
 
 	public static WebElement novaconta(WebDriver driver) {
 		element = driver.findElement(By.xpath("//*[@id=\"menuUser\"]"));
@@ -51,7 +54,11 @@ public class CadastroClienteObject {
 		element = driver.findElement(By.name("phone_numberRegisterPage"));
 		return element;
 	}
-
+	public static Select selecionaPais(WebDriver driver) {
+	WebElement element = driver.findElement(By.name("countryListboxRegisterPage"));
+	select = new Select(element);
+	return select;
+	}
 	public static WebElement City(WebDriver driver) {
 		element = driver.findElement(By.name("cityRegisterPage"));
 		return element;

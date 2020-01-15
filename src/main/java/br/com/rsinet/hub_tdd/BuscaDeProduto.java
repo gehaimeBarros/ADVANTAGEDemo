@@ -1,39 +1,41 @@
 package br.com.rsinet.hub_tdd;
 
-import java.io.File;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import br.com.rsinet.hub_tdd.PageObject.BuscaDeProdutoObject;
+import br.com.rsinet.hub_tdd.UtilExcel.takeSnapShot;
 
 public class BuscaDeProduto {
 	public static WebDriver driver;
 
-	public static void main(String[] args) throws Exception {
+	@BeforeMethod
+	public void beforeMethod() throws Exception {
 		driver = new ChromeDriver();
-
-		driver.manage().window().maximize();
-
-		driver.get("https://www.advantageonlineshopping.com/#/");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		BuscaDeProdutoObject.laptop(driver).click();
-		BuscaDeProdutoObject.ENVY17TTOUCH(driver).click();
-		BuscaDeProdutoObject.AdicioneNoCarrinho(driver).click();
-        BuscaDeProdutoObject.Check(driver).click();
-        
-		takeSnapShot("teste.png");
+		driver.manage().window().maximize();
+		driver.get("https://www.advantageonlineshopping.com/#/");
+
 	}
 
-	public static void takeSnapShot(String nomeDoArquivoImagem) throws Exception {
-		TakesScreenshot scrShot = ((TakesScreenshot) driver);
-		File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		String imageFileDir = "C:\\Users\\gehaime.silva\\Pictures\\Testes";
-		FileUtils.copyFile(srcFile, new File(imageFileDir, nomeDoArquivoImagem));
+	@Test
+	public void main() {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		BuscaDeProdutoObject.headphones(driver).click();
+		BuscaDeProdutoObject.LOGITECHUSBHEADSETH390(driver).click();
+		BuscaDeProdutoObject.color(driver).click();
+		BuscaDeProdutoObject.AdicioneNoCarrinho(driver).click();
+
+	}
+
+	@AfterMethod
+	public void afterMethod() throws Exception {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		BuscaDeProdutoObject.Check(driver).click();
+		takeSnapShot.takeScreenshot("teste", driver);
 
 	}
 

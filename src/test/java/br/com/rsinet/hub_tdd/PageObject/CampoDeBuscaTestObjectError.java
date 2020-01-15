@@ -16,17 +16,4 @@ public class CampoDeBuscaTestObjectError {
 		return element;
 	}
 }
-//	public static WebElement ELITEX21011G1TABLE(WebDriver driver) {
-//		element = driver.findElement(By.xpath("/html/body/div[3]/section/article/div[3]/div/div/div[2]/ul/li[2]/p[1]/a"));
-//		return element;
-//	}
-//	public static WebElement AdicionaNoCarrinho(WebDriver driver) {
-//		element = driver.findElement(By.name("save_to_cart"));
-//		return element;
-//	}
-//	public static WebElement Checkk(WebDriver driver) {
-//		element = driver.findElement(By.id("checkOutPopUp"));
-//		return element;
-//	}
-//}
 
