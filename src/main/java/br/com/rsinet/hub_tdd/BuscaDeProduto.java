@@ -35,7 +35,7 @@ public class BuscaDeProduto {
 	public void afterMethod() throws Exception {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		BuscaDeProdutoObject.Check(driver).click();
-		takeSnapShot.takeScreenshot("teste", driver);
+		takeSnapShot.screenShot(driver);
 
 	}
 

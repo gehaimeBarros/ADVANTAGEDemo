@@ -41,6 +41,6 @@ public class CampoDeBusca  {
 	public void afterMethod() throws Exception {
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 		CampoDeBuscaObject.Checkk(driver).click();
-		takeSnapShot.takeScreenshot("teste", driver);
+		takeSnapShot.screenShot(driver);
 	}
 }

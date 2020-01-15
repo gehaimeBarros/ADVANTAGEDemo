@@ -55,7 +55,7 @@ public class CadastroDeCliente  {
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 		CadastroClienteObject.Concordo(driver).click();
 		CadastroClienteObject.register(driver).click();
-		takeSnapShot.takeScreenshot("teste", driver);
+		takeSnapShot.screenShot(driver);
 
 	}
 

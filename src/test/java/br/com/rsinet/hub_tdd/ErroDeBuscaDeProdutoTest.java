@@ -37,7 +37,7 @@ public class ErroDeBuscaDeProdutoTest {
 	public void afterMethod() throws Exception {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		String resposta = driver.findElement(By.xpath("/html/body/div[3]/section/article[1]/div[2]/div[2]/div/label")).getText();
-		takeSnapShot.takeScreenshot("teste", driver);
+		takeSnapShot.screenShot(driver);
 		System.out.println(resposta);
 		Assert.assertFalse(resposta.equals("HP ENVY X360 - 15T LAPTOP"), "Excedeu o estoque");
 

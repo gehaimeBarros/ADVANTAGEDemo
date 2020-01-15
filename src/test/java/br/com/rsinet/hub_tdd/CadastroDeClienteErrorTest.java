@@ -1,5 +1,6 @@
 package br.com.rsinet.hub_tdd;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -53,11 +54,11 @@ public class CadastroDeClienteErrorTest{
 	}
 
 	@AfterMethod
-	public void afterMethod(){
+	public void afterMethod() throws IOException, InterruptedException{
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		CadastroDeClienteTestObjectError.Concordo(driver).click();
 		CadastroDeClienteTestObjectError.register(driver).click();
-		takeSnapShot.takeScreenshot("teste", driver);
+		takeSnapShot.screenShot(driver);
 		String resposta = driver.findElement(By.xpath("//*[@id=\"formCover\"]/div[1]/div[2]/sec-view[1]/div/label")).getText();
 		System.out.println(resposta);
 		Assert.assertFalse(resposta.equals("Use maximum 12 character"),"Senha incorreta");
