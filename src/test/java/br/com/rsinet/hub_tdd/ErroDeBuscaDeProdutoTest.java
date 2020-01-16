@@ -39,7 +39,7 @@ public class ErroDeBuscaDeProdutoTest {
 		String resposta = driver.findElement(By.xpath("/html/body/div[3]/section/article[1]/div[2]/div[2]/div/label")).getText();
 		takeSnapShot.screenShot(driver);
 		System.out.println(resposta);
-		Assert.assertFalse(resposta.equals("HP ENVY X360 - 15T LAPTOP"), "Excedeu o estoque");
+		Assert.assertTrue(resposta.equals("HP ENVY X360 - 15T LAPTOP"), "Excedeu o estoque");
 
 	}
 }
