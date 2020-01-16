@@ -2,66 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="24093" started-at="2020-01-15T15:46:44 BRT" finished-at="2020-01-15T15:47:08 BRT">
+  <suite name="Default suite" duration-ms="17000" started-at="2020-01-16T15:25:41 BRT" finished-at="2020-01-16T15:25:58 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="24093" started-at="2020-01-15T15:46:44 BRT" finished-at="2020-01-15T15:47:08 BRT">
+    <test name="Default test" duration-ms="17000" started-at="2020-01-16T15:25:41 BRT" finished-at="2020-01-16T15:25:58 BRT">
       <class name="br.com.rsinet.hub_tdd.CadastroDeClienteErrorTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.CadastroDeClienteErrorTest@1e965684]" name="beforeMethod" is-config="true" duration-ms="21553" started-at="2020-01-15T15:46:44 BRT" finished-at="2020-01-15T15:47:06 BRT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.CadastroDeClienteErrorTest@1e965684]" name="beforeMethod" is-config="true" duration-ms="14600" started-at="2020-01-16T15:25:41 BRT" finished-at="2020-01-16T15:25:55 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="main()[pri:0, instance:br.com.rsinet.hub_tdd.CadastroDeClienteErrorTest@1e965684]" name="main" duration-ms="1986" started-at="2020-01-15T15:47:06 BRT" finished-at="2020-01-15T15:47:08 BRT">
+        <test-method status="PASS" signature="main()[pri:0, instance:br.com.rsinet.hub_tdd.CadastroDeClienteErrorTest@1e965684]" name="main" duration-ms="1870" started-at="2020-01-16T15:25:55 BRT" finished-at="2020-01-16T15:25:57 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main -->
-        <test-method status="FAIL" signature="afterMethod()[pri:0, instance:br.com.rsinet.hub_tdd.CadastroDeClienteErrorTest@1e965684]" name="afterMethod" is-config="true" duration-ms="520" started-at="2020-01-15T15:47:08 BRT" finished-at="2020-01-15T15:47:08 BRT">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Senha incorreta did not expect to find [false] but found [true]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Senha incorreta did not expect to find [false] but found [true]
-at org.testng.Assert.fail(Assert.java:97)
-at org.testng.Assert.failNotEquals(Assert.java:969)
-at org.testng.Assert.assertFalse(Assert.java:65)
-at br.com.rsinet.hub_tdd.CadastroDeClienteErrorTest.afterMethod(CadastroDeClienteErrorTest.java:64)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:340)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:294)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:683)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:658)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:642)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:br.com.rsinet.hub_tdd.CadastroDeClienteErrorTest@1e965684]" name="afterMethod" is-config="true" duration-ms="496" started-at="2020-01-16T15:25:57 BRT" finished-at="2020-01-16T15:25:58 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
