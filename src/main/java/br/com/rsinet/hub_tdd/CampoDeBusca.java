@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import br.com.rsinet.hub_tdd.PageObject.CampoDeBuscaObject;
-import br.com.rsinet.hub_tdd.UtilExcel.takeSnapShot;
+import br.com.rsinet.hub_tdd.UtilExcel.TakeSnapShotAcertos;
 
 public class CampoDeBusca  {
 	public static WebDriver driver;
@@ -41,6 +41,6 @@ public class CampoDeBusca  {
 	public void afterMethod() throws Exception {
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 		CampoDeBuscaObject.Checkk(driver).click();
-		takeSnapShot.screenShot(driver);
+		TakeSnapShotAcertos.tirarPrintsDeAcerto("Busca na lupa", driver);
 	}
 }

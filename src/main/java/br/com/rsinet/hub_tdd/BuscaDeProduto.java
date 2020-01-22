@@ -7,7 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import br.com.rsinet.hub_tdd.PageObject.BuscaDeProdutoObject;
-import br.com.rsinet.hub_tdd.UtilExcel.takeSnapShot;
+import br.com.rsinet.hub_tdd.UtilExcel.TakeSnapShotAcertos;
 
 public class BuscaDeProduto {
 	public static WebDriver driver;
@@ -35,7 +35,7 @@ public class BuscaDeProduto {
 	public void afterMethod() throws Exception {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		BuscaDeProdutoObject.Check(driver).click();
-		takeSnapShot.screenShot(driver);
+		TakeSnapShotAcertos.tirarPrintsDeAcerto("Compra de produto", driver);
 
 	}
 

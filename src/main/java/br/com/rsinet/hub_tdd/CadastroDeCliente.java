@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import br.com.rsinet.hub_tdd.PageObject.CadastroClienteObject;
 import br.com.rsinet.hub_tdd.Util.Constant;
 import br.com.rsinet.hub_tdd.Util.ProjetoExcel;
-import br.com.rsinet.hub_tdd.UtilExcel.takeSnapShot;
+import br.com.rsinet.hub_tdd.UtilExcel.TakeSnapShotAcertos;
 
 public class CadastroDeCliente  {
 	public static WebDriver driver;
@@ -28,6 +28,7 @@ public class CadastroDeCliente  {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 		driver.get("https://www.advantageonlineshopping.com/#/");
+		
 		CadastroClienteObject.novaconta(driver).click();
 		CadastroClienteObject.CriarNovaConta(driver).sendKeys(Keys.ENTER);
 	}
@@ -55,7 +56,7 @@ public class CadastroDeCliente  {
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 		CadastroClienteObject.Concordo(driver).click();
 		CadastroClienteObject.register(driver).click();
-		takeSnapShot.screenShot(driver);
+		TakeSnapShotAcertos.tirarPrintsDeAcerto("Cadastro bem sucedido", driver);
 
 	}
 
