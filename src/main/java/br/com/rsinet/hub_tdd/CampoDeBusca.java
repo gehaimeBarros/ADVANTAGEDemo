@@ -13,11 +13,17 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import br.com.rsinet.hub_tdd.PageObject.CampoDeBuscaObject;
 import br.com.rsinet.hub_tdd.UtilExcel.TakeSnapShotAcertos;
 
 public class CampoDeBusca  {
 	public static WebDriver driver;
+	ExtentReports extensao;
+	ExtentTest logger;
 
 	@BeforeMethod
 	public void beforeMethod() throws Exception {
@@ -27,6 +33,11 @@ public class CampoDeBusca  {
 		driver.get("https://www.advantageonlineshopping.com/#/");
 		CampoDeBuscaObject.Busca(driver).click();
 		CampoDeBuscaObject.completa(driver).sendKeys("tablets" + Keys.ENTER);
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\gehaime.silva\\Pictures\\ReportTDD.Acertos\\BuscaRealizadaComSucesso.html");
+        extensao = new ExtentReports();
+        extensao.attachReporter(reporte);
+        logger = extensao.createTest("Busca de tablet");
+
 	}
 
 	@Test
@@ -42,6 +53,7 @@ public class CampoDeBusca  {
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 		CampoDeBuscaObject.Checkk(driver).click();
 		TakeSnapShotAcertos.tirarPrintsDeAcerto("Busca na lupa", driver);
+		extensao.flush();
 		driver.quit();
 
 	}

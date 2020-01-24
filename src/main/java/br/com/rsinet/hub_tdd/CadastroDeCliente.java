@@ -13,7 +13,9 @@ import org.testng.annotations.BeforeTest;
 //import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.hub_tdd.PageObject.CadastroClienteObject;
 import br.com.rsinet.hub_tdd.Util.Constant;
@@ -22,7 +24,9 @@ import br.com.rsinet.hub_tdd.UtilExcel.TakeSnapShotAcertos;
 
 public class CadastroDeCliente  {
 	public static WebDriver driver;
-
+	ExtentReports extensao;
+	ExtentTest logger;
+	
 	@BeforeTest
 	public void beforeMethod() throws Exception {
 		driver = new ChromeDriver();
@@ -52,6 +56,10 @@ public class CadastroDeCliente  {
 		CadastroClienteObject.address(driver).sendKeys(ProjetoExcel.getCellData(9, 1));
 		CadastroClienteObject.state(driver).sendKeys(ProjetoExcel.getCellData(10, 1));
 		CadastroClienteObject.postalcode(driver).sendKeys(ProjetoExcel.getCellData(11, 1));
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\gehaime.silva\\Pictures\\ReportTDD.Acertos\\CadastroRealizadaComSucesso.html");
+        extensao = new ExtentReports();
+        extensao.attachReporter(reporte);
+        logger = extensao.createTest("Cadastro bem sucedido");
 
 	}
 
@@ -61,6 +69,7 @@ public class CadastroDeCliente  {
 		CadastroClienteObject.Concordo(driver).click();
 		CadastroClienteObject.register(driver).click();
 		TakeSnapShotAcertos.tirarPrintsDeAcerto("Cadastro bem sucedido", driver);
+		extensao.flush();
 		driver.quit();
 
 

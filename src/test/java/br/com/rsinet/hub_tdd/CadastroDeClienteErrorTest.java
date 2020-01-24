@@ -10,18 +10,24 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import br.com.rsinet.hub_tdd.PageObject.CadastroClienteObject;
 import br.com.rsinet.hub_tdd.PageObject.CadastroDeClienteTestObjectError;
 import br.com.rsinet.hub_tdd.UtilExcel.takeSnapShot;
 
 public class CadastroDeClienteErrorTest{
 	public static WebDriver driver;
+	ExtentReports extensao;
+	ExtentTest logger;
 
 	@BeforeMethod
 	public void beforeMethod() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		driver.get("https://www.advantageonlineshopping.com/#/");
 		CadastroClienteObject.novaconta(driver).click();
 		CadastroClienteObject.CriarNovaConta(driver).sendKeys(Keys.ENTER);
@@ -45,7 +51,10 @@ public class CadastroDeClienteErrorTest{
 		CadastroDeClienteTestObjectError.address(driver).sendKeys("Osasco");
 		CadastroDeClienteTestObjectError.state(driver).sendKeys("Brasil");
 		CadastroDeClienteTestObjectError.postalcode(driver).sendKeys("03454-230");
-
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\gehaime.silva\\Pictures\\ReportTDD.Erros\\FalhaNoCadastro.html");
+		        extensao = new ExtentReports();
+		        extensao.attachReporter(reporte);
+		        logger = extensao.createTest("Use maximum 12 character");
 	}
 
 	@AfterMethod
@@ -56,6 +65,7 @@ public class CadastroDeClienteErrorTest{
 		String resposta = driver.findElement(By.xpath("//*[@id=\"formCover\"]/div[1]/div[2]/sec-view[1]/div/label")).getText();
 		System.out.println(resposta);
 		Assert.assertTrue(resposta.equals("Use maximum 12 character"),"Senha incorreta");
+		extensao.flush();
 		driver.quit();
 
 

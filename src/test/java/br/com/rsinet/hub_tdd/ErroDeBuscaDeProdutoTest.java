@@ -9,11 +9,17 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import br.com.rsinet.hub_tdd.PageObject.ErroDeBuscaDeProdutoObject;
 import br.com.rsinet.hub_tdd.UtilExcel.takeSnapShot;
 
 public class ErroDeBuscaDeProdutoTest {
 	public static WebDriver driver;
+	ExtentReports extensao;
+	ExtentTest logger;
 
 	@BeforeMethod
 	public void beforeMethod() {
@@ -30,6 +36,11 @@ public class ErroDeBuscaDeProdutoTest {
 		ErroDeBuscaDeProdutoObject.HPS9500BLUETOOTHWIRELESSSPEAKER(driver).click();
 		ErroDeBuscaDeProdutoObject.Quantidade(driver).sendKeys("100");
 		ErroDeBuscaDeProdutoObject.SalvarNoCarinho(driver).click();
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\gehaime.silva\\Pictures\\ReportTDD.Erros\\CompraNaoRealizada.html");
+        extensao = new ExtentReports();
+        extensao.attachReporter(reporte);
+        logger = extensao.createTest("Excedeu o estoque");
+
 
 	}
 
