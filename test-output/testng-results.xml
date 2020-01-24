@@ -2,24 +2,31 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="12811" started-at="2020-01-22T14:01:18 BRT" finished-at="2020-01-22T14:01:31 BRT">
+  <suite name="Default suite" duration-ms="16629" started-at="2020-01-23T16:06:28 BRT" finished-at="2020-01-23T16:06:45 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="12811" started-at="2020-01-22T14:01:18 BRT" finished-at="2020-01-22T14:01:31 BRT">
-      <class name="br.com.rsinet.hub_tdd.CampoDeBuscaTestError">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.CampoDeBuscaTestError@1e965684]" name="beforeMethod" is-config="true" duration-ms="11230" started-at="2020-01-22T14:01:18 BRT" finished-at="2020-01-22T14:01:29 BRT">
+    <test name="Default test" duration-ms="16629" started-at="2020-01-23T16:06:28 BRT" finished-at="2020-01-23T16:06:45 BRT">
+      <class name="br.com.rsinet.hub_tdd.CadastroDeCliente">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.CadastroDeCliente@2833cc44]" name="beforeMethod" is-config="true" duration-ms="13093" started-at="2020-01-23T16:06:28 BRT" finished-at="2020-01-23T16:06:41 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="main()[pri:0, instance:br.com.rsinet.hub_tdd.CampoDeBuscaTestError@1e965684]" name="main" duration-ms="1000" started-at="2020-01-22T14:01:29 BRT" finished-at="2020-01-22T14:01:30 BRT">
+        <test-method status="PASS" signature="main()[pri:0, instance:br.com.rsinet.hub_tdd.CadastroDeCliente@2833cc44]" name="main" duration-ms="3031" started-at="2020-01-23T16:06:41 BRT" finished-at="2020-01-23T16:06:44 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:br.com.rsinet.hub_tdd.CampoDeBuscaTestError@1e965684]" name="afterMethod" is-config="true" duration-ms="551" started-at="2020-01-22T14:01:30 BRT" finished-at="2020-01-22T14:01:31 BRT">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_tdd.CadastroDeCliente@2833cc44]" name="afterMethod" is-config="true" duration-ms="474" started-at="2020-01-23T16:06:44 BRT" finished-at="2020-01-23T16:06:45 BRT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=main status=SUCCESS method=CadastroDeCliente.main()[pri:0, instance:br.com.rsinet.hub_tdd.CadastroDeCliente@2833cc44] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- br.com.rsinet.hub_tdd.CampoDeBuscaTestError -->
+      </class> <!-- br.com.rsinet.hub_tdd.CadastroDeCliente -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

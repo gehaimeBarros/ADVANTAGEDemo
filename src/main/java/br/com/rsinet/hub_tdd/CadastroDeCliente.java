@@ -6,11 +6,15 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 //import org.openqa.selenium.support.ui.ExpectedConditions;
 //import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
+
+
 import br.com.rsinet.hub_tdd.PageObject.CadastroClienteObject;
 import br.com.rsinet.hub_tdd.Util.Constant;
 import br.com.rsinet.hub_tdd.Util.ProjetoExcel;
@@ -27,14 +31,14 @@ public class CadastroDeCliente  {
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-		driver.get("https://www.advantageonlineshopping.com/#/");
-		
+		driver.get("https://www.advantageonlineshopping.com/#/");		
 		CadastroClienteObject.novaconta(driver).click();
 		CadastroClienteObject.CriarNovaConta(driver).sendKeys(Keys.ENTER);
 	}
 
 	@Test
 	public void main() throws Exception {
+				
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 		CadastroClienteObject.UserName(driver).sendKeys(ProjetoExcel.getCellData(0, 1));
 		CadastroClienteObject.password(driver).sendKeys(ProjetoExcel.getCellData(2, 1));
@@ -52,11 +56,13 @@ public class CadastroDeCliente  {
 	}
 
 	@AfterMethod
-	public void afterMethod() throws Exception {
+	public void afterMethod(ITestResult result) throws Exception {
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 		CadastroClienteObject.Concordo(driver).click();
 		CadastroClienteObject.register(driver).click();
 		TakeSnapShotAcertos.tirarPrintsDeAcerto("Cadastro bem sucedido", driver);
+		driver.quit();
+
 
 	}
 

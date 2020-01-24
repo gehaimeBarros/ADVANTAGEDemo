@@ -56,6 +56,8 @@ public class CadastroDeClienteErrorTest{
 		String resposta = driver.findElement(By.xpath("//*[@id=\"formCover\"]/div[1]/div[2]/sec-view[1]/div/label")).getText();
 		System.out.println(resposta);
 		Assert.assertTrue(resposta.equals("Use maximum 12 character"),"Senha incorreta");
+		driver.quit();
+
 
 	}
 }

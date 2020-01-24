@@ -36,6 +36,7 @@ public class BuscaDeProduto {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		BuscaDeProdutoObject.Check(driver).click();
 		TakeSnapShotAcertos.tirarPrintsDeAcerto("Compra de produto", driver);
+		driver.quit();
 
 	}
 

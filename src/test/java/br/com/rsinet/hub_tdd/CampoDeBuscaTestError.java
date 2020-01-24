@@ -37,6 +37,8 @@ public class CampoDeBuscaTestError {
 		String resposta = driver.findElement(By.xpath("		//*[@id=\"searchPage\"]/div[3]/div/label/span\r\n")).getText();
 		System.out.println(resposta);
 		Assert.assertTrue(resposta.equals("No results for \"celular\""),"Produto nao encontrado");
+		driver.quit();
+
 	
 	}
 }

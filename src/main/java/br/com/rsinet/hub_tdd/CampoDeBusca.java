@@ -42,5 +42,7 @@ public class CampoDeBusca  {
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 		CampoDeBuscaObject.Checkk(driver).click();
 		TakeSnapShotAcertos.tirarPrintsDeAcerto("Busca na lupa", driver);
+		driver.quit();
+
 	}
 }
